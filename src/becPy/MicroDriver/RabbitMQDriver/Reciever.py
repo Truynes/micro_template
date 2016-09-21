@@ -1,8 +1,4 @@
 import pika
-# from src.becPy.Workflows.WorkFlow import WorkFlow
-# import socket
-# from src.becPy.MicroDriver.RabbitMQDriver import RabbitMQDriver
-
 
 class Reciever():
 

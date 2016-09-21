@@ -1,12 +1,11 @@
 import pika
-
+import os
 class RabbitMQDriver():
 	
 	def __init__(self):
 		self.rabbit_channel = None
 		self.exchange = 'dsenyurt_test'
-		self.url = "amqp://micro:bench629@green.benchmarkeducation.ny:5672/%2F"
-
+		self.url = os.environ['AMQP_URL']
 
 		
 
