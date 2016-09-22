@@ -1,15 +1,15 @@
 #!/usr/bin/python
-#!/usr/bin/python
 from WorkFlow import WorkFlow
 
-class Reciever(WorkFlow):
+class Publish(WorkFlow):
 
 	def __init__(self):
 		"""
 		queue_name, routing_key will be dynamically mapped via class name where values stored in a json workflow file
 		"""
-		queue_name = 'reciever'
-		routing_key = 'reciever'
+		print(self.__class__.__name__)
+		queue_name = 'publish'
+		routing_key = 'publish'
 		WorkFlow.__init__(self)
 		self.declare_queue(self.do_work, queue_name, routing_key)
 
@@ -17,9 +17,9 @@ class Reciever(WorkFlow):
 		"""
 		Driver function to perform necessary tasks for that workflow
 		"""
-		print("Recieved a message:" + str(body))
+		print("Publish Workflow Msg: " + str(body))
 
 
 if __name__ == "__main__":
-	print("Initializing Reciever")
-	rc = Reciever()
+	print("Initializing Publish")
+	rc = Publish()
